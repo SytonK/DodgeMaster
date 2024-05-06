@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://544n3vs8058"]
+
+[ext_resource type="Texture2D" uid="uid://brd8dhlk8hmk1" path="res://assets/testing/White spuer 32 x 32.png" id="1_ugtno"]
+[ext_resource type="Script" path="res://src/components/spawner/spawner.gd" id="2_mth17"]
+
+[node name="TargetPlayerTower" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.588235, 0, 0, 1)
+rotation = 0.785398
+texture = ExtResource("1_ugtno")
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("2_mth17")
