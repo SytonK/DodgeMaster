@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ts75na1sexux"]
+[gd_scene load_steps=5 format=3 uid="uid://ts75na1sexux"]
 
 [ext_resource type="TileSet" uid="uid://c21s16q86co5l" path="res://src/levels/tilemap.tres" id="1_jik7w"]
 [ext_resource type="PackedScene" uid="uid://ckbasmycborlx" path="res://src/player/player.tscn" id="2_an105"]
 [ext_resource type="Texture2D" uid="uid://dy4sumggi2mhb" path="res://icon.svg" id="3_mhf3h"]
+[ext_resource type="Script" path="res://src/components/spawner/spawner.gd" id="4_3bc4r"]
 
 [node name="Sandbox" type="Node2D"]
 
@@ -44,3 +45,6 @@ texture = ExtResource("3_mhf3h")
 [node name="Icon8" type="Sprite2D" parent="."]
 position = Vector2(1467, -738)
 texture = ExtResource("3_mhf3h")
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("4_3bc4r")
