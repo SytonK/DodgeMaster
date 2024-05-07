@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://4nwv51twnheo"]
 
-[ext_resource type="Script" path="res://src/components/hitbox and hurtbox/hitbox/hitbox.gd" id="1_7m63b"]
+[ext_resource type="Script" path="res://src/enemies attacks/projectiels/projectile.gd" id="1_v2u52"]
 [ext_resource type="Texture2D" uid="uid://b1ifi5yxuer5e" path="res://assets/testing/16 x 64.png" id="2_xwqv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jkjw"]
 size = Vector2(16, 64)
 
 [node name="Projectile" type="Area2D"]
-script = ExtResource("1_7m63b")
+script = ExtResource("1_v2u52")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5jkjw")
