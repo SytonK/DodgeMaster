@@ -1,7 +1,9 @@
 class_name Hitbox
 extends Area2D
 
+
 signal hit
+
 
 func _init() -> void:
 	collision_layer = Layers.HITBOX_LAYER
