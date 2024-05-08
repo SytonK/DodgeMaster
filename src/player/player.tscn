@@ -2,19 +2,24 @@
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_0y56l"]
 [ext_resource type="Script" path="res://src/components/hitbox and hurtbox/hurtbox/hurtbox.gd" id="2_qesyn"]
+[ext_resource type="Texture2D" uid="uid://brd8dhlk8hmk1" path="res://assets/testing/White spuer 32 x 32.png" id="2_rltio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg8lc"]
-size = Vector2(64, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xj4l"]
-size = Vector2(64, 64)
+size = Vector2(32, 32)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_0y56l")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.09083
+skew = 0.610865
+texture = ExtResource("2_rltio")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.09083
+skew = 0.610865
 shape = SubResource("RectangleShape2D_bg8lc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -26,6 +31,9 @@ drag_vertical_enabled = true
 script = ExtResource("2_qesyn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-shape = SubResource("RectangleShape2D_4xj4l")
+rotation = -1.09083
+scale = Vector2(1, 1)
+skew = 0.610865
+shape = SubResource("RectangleShape2D_bg8lc")
 
 [connection signal="hurt" from="hurtbox" to="." method="_on_hurtbox_hurt"]
