@@ -10,3 +10,7 @@ func _process(_delta: float) -> void:
 	).normalized() * movement_speed
 	
 	move_and_slide()
+
+
+func _on_hurtbox_hurt():
+	print('i was hit')

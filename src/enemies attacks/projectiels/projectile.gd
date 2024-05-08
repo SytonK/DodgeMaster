@@ -15,3 +15,7 @@ func _set_direction(new_direction: Vector2) -> void:
 		queue_free()
 	else:
 		direction = new_direction.normalized()
+
+
+func _on_hit():
+	queue_free()
