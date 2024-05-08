@@ -1,7 +1,13 @@
-class_name player
+class_name Player
 extends CharacterBody2D
 
+
 @export var movement_speed: float = 500
+
+
+func _ready() -> void:
+	Globals.player_ref = self
+
 
 func _process(_delta: float) -> void:
 	velocity = Vector2(
