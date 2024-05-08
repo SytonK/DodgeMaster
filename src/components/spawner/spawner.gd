@@ -8,7 +8,7 @@ var frequency_timer: Timer
 
 @export var scene_to_spawn: PackedScene
 
-func _ready():
+func _ready() -> void:
 	_init_frequency_timer()
 
 func _init_frequency_timer() -> void:

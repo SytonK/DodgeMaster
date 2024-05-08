@@ -12,5 +12,5 @@ func _process(_delta: float) -> void:
 	move_and_slide()
 
 
-func _on_hurtbox_hurt():
+func _on_hurtbox_hurt() -> void:
 	print('i was hit')
