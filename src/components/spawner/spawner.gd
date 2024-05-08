@@ -1,6 +1,8 @@
 class_name Spawner
 extends Node2D
 
+signal scene_spawned(scene: PackedScene)
+
 @export var frequency: float = 1 : set = _set_frequency
 var frequency_timer: Timer
 
@@ -20,6 +22,7 @@ func _init_frequency_timer() -> void:
 
 func _spawn() -> void:
 	var new_scene: = scene_to_spawn.instantiate()
+	scene_spawned.emit(new_scene)
 	add_child(new_scene)
 
 
