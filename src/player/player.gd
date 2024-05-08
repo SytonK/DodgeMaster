@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 @export var movement_speed: float = 500
 
+var max_health: int = 3
+var health: int = max_health : set = _set_health
 
 func _ready() -> void:
 	Globals.player_ref = self
@@ -19,4 +21,14 @@ func _process(_delta: float) -> void:
 
 
 func _on_hurtbox_hurt() -> void:
-	print('i was hit')
+	health -= 1
+
+
+func _set_health(new_health: int) -> void:
+	health = clamp(new_health, 0, max_health)
+	if health <= 0:
+		_die()
+
+
+func _die() -> void:
+	print('player died')
