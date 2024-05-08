@@ -29,6 +29,5 @@ func _set_health(new_health: int) -> void:
 	if health <= 0:
 		_die()
 
-
 func _die() -> void:
 	print('player died')
