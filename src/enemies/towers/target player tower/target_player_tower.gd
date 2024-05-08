@@ -8,7 +8,7 @@ const COLOR_MODDLATE_FACTOR: float = 0.001
 
 
 func _on_spawner_scene_spawned(projectile: Projectile) -> void:
-	projectile.direction = Globals.player_ref.position - projectile.position
+	projectile.direction = Globals.player_ref.position - global_position
 	projectile.rotation = projectile.direction.angle()
 	projectile.speed = projectile_speed
 	projectile.modulate = Color(0.8, 
