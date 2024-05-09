@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+signal game_over
+
 
 @export var movement_speed: float = 500
 
@@ -33,4 +35,4 @@ func _set_health(new_health: int) -> void:
 		_die()
 
 func _die() -> void:
-	print('player died')
+	game_over.emit()
