@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://2pt2lat70mm1"]
+
+[ext_resource type="Script" path="res://src/UI/player/health/health_ui.gd" id="1_cvwvl"]
+[ext_resource type="Texture2D" uid="uid://bed28itohr7ew" path="res://assets/testing/health.png" id="1_rjqms"]
+
+[node name="HealthUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cvwvl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_rjqms")
+centered = false
+hframes = 5

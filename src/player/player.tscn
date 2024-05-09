@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckbasmycborlx"]
+[gd_scene load_steps=6 format=3 uid="uid://ckbasmycborlx"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_0y56l"]
 [ext_resource type="Script" path="res://src/components/hitbox and hurtbox/hurtbox/hurtbox.gd" id="2_qesyn"]
 [ext_resource type="Texture2D" uid="uid://brd8dhlk8hmk1" path="res://assets/testing/White spuer 32 x 32.png" id="2_rltio"]
+[ext_resource type="PackedScene" uid="uid://2pt2lat70mm1" path="res://src/UI/player/health/health_ui.tscn" id="4_qbwra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg8lc"]
 size = Vector2(32, 32)
@@ -32,8 +33,11 @@ script = ExtResource("2_qesyn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 rotation = -1.09083
-scale = Vector2(1, 1)
 skew = 0.610865
 shape = SubResource("RectangleShape2D_bg8lc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthUI" parent="CanvasLayer" instance=ExtResource("4_qbwra")]
 
 [connection signal="hurt" from="hurtbox" to="." method="_on_hurtbox_hurt"]
