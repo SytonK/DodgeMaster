@@ -1,24 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj2p72vwf0erl"]
+[gd_scene load_steps=2 format=3 uid="uid://cj2p72vwf0erl"]
 
 [ext_resource type="Script" path="res://src/UI/menus/pause menu/pause_menu.gd" id="1_kxxqt"]
-[ext_resource type="Texture2D" uid="uid://dy4sumggi2mhb" path="res://icon.svg" id="1_v48ho"]
 
-[node name="PauseMenu" type="Control"]
+[node name="PauseMenu" type="VBoxContainer"]
 process_mode = 3
 visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -29.0
+offset_right = 35.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 script = ExtResource("1_kxxqt")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(594, 459)
-texture = ExtResource("1_v48ho")
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Pause"
+horizontal_alignment = 1
 
-[node name="Icon2" type="Sprite2D" parent="."]
-process_mode = 3
-position = Vector2(1181, 509)
-texture = ExtResource("1_v48ho")
+[node name="PauseButton" type="Button" parent="."]
+layout_mode = 2
+text = "Resume"
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
