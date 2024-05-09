@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj2p72vwf0erl"]
+
+[ext_resource type="Script" path="res://src/UI/menus/pause menu/pause_menu.gd" id="1_kxxqt"]
+[ext_resource type="Texture2D" uid="uid://dy4sumggi2mhb" path="res://icon.svg" id="1_v48ho"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kxxqt")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(594, 459)
+texture = ExtResource("1_v48ho")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+process_mode = 3
+position = Vector2(1181, 509)
+texture = ExtResource("1_v48ho")
