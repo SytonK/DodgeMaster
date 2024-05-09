@@ -28,7 +28,7 @@ func _on_hurtbox_hurt() -> void:
 
 func _set_health(new_health: int) -> void:
 	health = clamp(new_health, 0, max_health)
-	health_ui.new_health(health)
+	health_ui.update_health(health)
 	if health <= 0:
 		_die()
 
