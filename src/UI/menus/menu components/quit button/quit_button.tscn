@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbt1e6e1k71vs"]
+
+[ext_resource type="Script" path="res://src/UI/menus/menu components/quit button/quit_button.gd" id="1_rowuw"]
+
+[node name="QuitButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Quit game"
+script = ExtResource("1_rowuw")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
