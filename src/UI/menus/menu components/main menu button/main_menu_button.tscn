@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgu4d8ikx388r"]
+
+[ext_resource type="Script" path="res://src/UI/menus/menu components/main menu button/main_menu_button.gd" id="1_111pw"]
+
+[node name="MainMenuButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Main Menu"
+script = ExtResource("1_111pw")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

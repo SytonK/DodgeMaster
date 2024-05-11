@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj2p72vwf0erl"]
+[gd_scene load_steps=4 format=3 uid="uid://cj2p72vwf0erl"]
 
 [ext_resource type="Script" path="res://src/UI/menus/pause menu/pause_menu.gd" id="1_kxxqt"]
 [ext_resource type="PackedScene" uid="uid://dbt1e6e1k71vs" path="res://src/UI/menus/menu components/quit button/quit_button.tscn" id="2_nv6bd"]
+[ext_resource type="PackedScene" uid="uid://cgu4d8ikx388r" path="res://src/UI/menus/menu components/main menu button/main_menu_button.tscn" id="3_ivsl6"]
 
 [node name="PauseMenu" type="VBoxContainer"]
 process_mode = 3
@@ -28,6 +29,9 @@ horizontal_alignment = 1
 [node name="PauseButton" type="Button" parent="."]
 layout_mode = 2
 text = "Resume"
+
+[node name="MainMenuButton" parent="." instance=ExtResource("3_ivsl6")]
+layout_mode = 2
 
 [node name="QuitButton" parent="." instance=ExtResource("2_nv6bd")]
 layout_mode = 2

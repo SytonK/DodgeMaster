@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1cglv8tw21rv"]
+[gd_scene load_steps=3 format=3 uid="uid://b1cglv8tw21rv"]
 
 [ext_resource type="PackedScene" uid="uid://dbt1e6e1k71vs" path="res://src/UI/menus/menu components/quit button/quit_button.tscn" id="1_6evc5"]
+[ext_resource type="PackedScene" uid="uid://cgu4d8ikx388r" path="res://src/UI/menus/menu components/main menu button/main_menu_button.tscn" id="2_xyfj8"]
 
 [node name="GameOverMenu" type="VBoxContainer"]
 process_mode = 2
@@ -20,6 +21,9 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
 text = "Game over"
+
+[node name="MainMenuButton" parent="." instance=ExtResource("2_xyfj8")]
+layout_mode = 2
 
 [node name="QuitButton" parent="." instance=ExtResource("1_6evc5")]
 layout_mode = 2
