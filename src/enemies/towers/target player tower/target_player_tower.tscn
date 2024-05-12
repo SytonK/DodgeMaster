@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://544n3vs8058"]
+[gd_scene load_steps=6 format=3 uid="uid://544n3vs8058"]
 
 [ext_resource type="Script" path="res://src/enemies/towers/target player tower/target_player_tower.gd" id="1_t2tts"]
 [ext_resource type="Texture2D" uid="uid://brd8dhlk8hmk1" path="res://assets/testing/White spuer 32 x 32.png" id="1_ugtno"]
 [ext_resource type="Script" path="res://src/components/spawner/spawner.gd" id="2_mth17"]
 [ext_resource type="PackedScene" uid="uid://4nwv51twnheo" path="res://src/enemies attacks/projectiels/projectile.tscn" id="3_w3phn"]
 
-[node name="TargetPlayerTower" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53b61"]
+size = Vector2(32, 32)
+
+[node name="TargetPlayerTower" type="StaticBody2D"]
+collision_mask = 0
 script = ExtResource("1_t2tts")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,5 +20,9 @@ texture = ExtResource("1_ugtno")
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource("2_mth17")
 scene_to_spawn = ExtResource("3_w3phn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_53b61")
 
 [connection signal="scene_spawned" from="Spawner" to="." method="_on_spawner_scene_spawned"]
