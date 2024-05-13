@@ -3,9 +3,15 @@ extends Node2D
 
 const COLOR_MODDLATE_FACTOR: float = 0.001
 
+@onready var spawner: Spawner = $Spawner
 
+@export var frequency: float
 @export var projectile_speed: int = 300
 @export var max_distance_from_axis: int
+
+
+func _ready() -> void:
+	spawner.frequency = frequency
 
 
 func _on_spawner_scene_spawned(projectile: Projectile) -> void:
