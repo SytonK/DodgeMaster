@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ts75na1sexux"]
+[gd_scene load_steps=7 format=3 uid="uid://ts75na1sexux"]
 
 [ext_resource type="Script" path="res://src/levels/level.gd" id="1_epejh"]
 [ext_resource type="TileSet" uid="uid://c21s16q86co5l" path="res://src/levels/tilemap.tres" id="1_jik7w"]
 [ext_resource type="PackedScene" uid="uid://ckbasmycborlx" path="res://src/player/player.tscn" id="2_an105"]
-[ext_resource type="PackedScene" uid="uid://b1cglv8tw21rv" path="res://src/UI/menus/game over menu/game_over_menu.tscn" id="3_ob1bf"]
-[ext_resource type="PackedScene" uid="uid://cj2p72vwf0erl" path="res://src/UI/menus/pause menu/pause_menu.tscn" id="4_2vequ"]
+[ext_resource type="PackedScene" uid="uid://ywvrukx663il" path="res://src/UI/level ui/level_ui.tscn" id="2_s5yoe"]
 [ext_resource type="PackedScene" uid="uid://544n3vs8058" path="res://src/enemies/towers/target player tower/target_player_tower.tscn" id="7_4gpvv"]
 [ext_resource type="PackedScene" uid="uid://dbi27qlcdmvi4" path="res://src/enemies/invisible spawner/target player invisible spawner/target_player_invisible_spawner.tscn" id="7_2118m"]
 
@@ -12,12 +11,6 @@
 script = ExtResource("1_epejh")
 
 [node name="Player" parent="." instance=ExtResource("2_an105")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="GameOverMenu" parent="CanvasLayer" instance=ExtResource("3_ob1bf")]
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_2vequ")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_jik7w")
@@ -32,5 +25,7 @@ radius = 200
 position = Vector2(646, -346)
 frequency = 0.2
 max_distance_from_axis = 2000
+
+[node name="LevelUi" parent="." instance=ExtResource("2_s5yoe")]
 
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]

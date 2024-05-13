@@ -2,8 +2,8 @@ class_name Level
 extends Node2D
 
 
-@onready var game_over_menu: Control = $CanvasLayer/GameOverMenu
-@onready var pause_menu: Control = $CanvasLayer/PauseMenu
+@onready var game_over_menu: Control = $LevelUi/GameOverMenu
+@onready var pause_menu: Control = $LevelUi/PauseMenu
 
 
 func _on_player_game_over() -> void:
