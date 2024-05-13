@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4n7uvsu4x8uk"]
+[gd_scene load_steps=4 format=3 uid="uid://b4n7uvsu4x8uk"]
 
 [ext_resource type="Script" path="res://src/UI/menus/main menu/main_menu.gd" id="1_khr3w"]
 [ext_resource type="PackedScene" uid="uid://dbt1e6e1k71vs" path="res://src/UI/menus/menu components/quit button/quit_button.tscn" id="2_a4y4q"]
+[ext_resource type="PackedScene" uid="uid://bqe6t377bhbsa" path="res://src/UI/menus/menu components/level selector/level_selector.tscn" id="2_t4mg5"]
 
 [node name="MainMenu" type="VBoxContainer"]
 anchors_preset = 8
@@ -20,6 +21,9 @@ script = ExtResource("1_khr3w")
 [node name="GameTitle" type="Label" parent="."]
 layout_mode = 2
 text = "Dodge Master"
+
+[node name="LevelSelector" parent="." instance=ExtResource("2_t4mg5")]
+layout_mode = 2
 
 [node name="SandboxButton" type="Button" parent="."]
 layout_mode = 2

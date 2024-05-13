@@ -27,5 +27,3 @@ radius = 200
 position = Vector2(646, -346)
 frequency = 0.2
 max_distance_from_axis = 2000
-
-[connection signal="game_over" from="Player" to="." method="_on_player_game_over"]

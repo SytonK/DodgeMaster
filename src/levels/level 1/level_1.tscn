@@ -20,4 +20,4 @@ layer_0/tile_data = PackedInt32Array(-1114143, 1, 0, -1048607, 1, 0, -983071, 1,
 
 [node name="TargerPlayerInvisibleSpawner" parent="." instance=ExtResource("5_u5s4b")]
 frequency = 0.5
-radius = 1000
+radius = 2000
