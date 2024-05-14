@@ -1,18 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ts75na1sexux"]
+[gd_scene load_steps=5 format=3 uid="uid://ts75na1sexux"]
 
 [ext_resource type="Script" path="res://src/levels/level.gd" id="1_epejh"]
 [ext_resource type="TileSet" uid="uid://c21s16q86co5l" path="res://src/levels/tilemap.tres" id="1_jik7w"]
-[ext_resource type="PackedScene" uid="uid://ckbasmycborlx" path="res://src/player/player.tscn" id="2_an105"]
-[ext_resource type="PackedScene" uid="uid://ywvrukx663il" path="res://src/UI/level ui/level_ui.tscn" id="2_s5yoe"]
 [ext_resource type="PackedScene" uid="uid://544n3vs8058" path="res://src/enemies/towers/target player tower/target_player_tower.tscn" id="7_4gpvv"]
 [ext_resource type="PackedScene" uid="uid://dbi27qlcdmvi4" path="res://src/enemies/invisible spawner/target player invisible spawner/target_player_invisible_spawner.tscn" id="7_2118m"]
 
 [node name="Sandbox" type="Node2D"]
 script = ExtResource("1_epejh")
-
-[node name="Player" parent="." instance=ExtResource("2_an105")]
-
-[node name="LevelUi" parent="." instance=ExtResource("2_s5yoe")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_jik7w")
