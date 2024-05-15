@@ -1,17 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://du6b5e0bpo0n2"]
+[gd_scene load_steps=4 format=3 uid="uid://du6b5e0bpo0n2"]
 
 [ext_resource type="Script" path="res://src/levels/level.gd" id="1_ni5lo"]
-[ext_resource type="PackedScene" uid="uid://ywvrukx663il" path="res://src/UI/level ui/level_ui.tscn" id="2_m7lsr"]
 [ext_resource type="TileSet" uid="uid://c21s16q86co5l" path="res://src/levels/tilemap.tres" id="3_jeca8"]
-[ext_resource type="PackedScene" uid="uid://ckbasmycborlx" path="res://src/player/player.tscn" id="3_kbl70"]
 [ext_resource type="PackedScene" uid="uid://dbi27qlcdmvi4" path="res://src/enemies/invisible spawner/target player invisible spawner/target_player_invisible_spawner.tscn" id="5_u5s4b"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ni5lo")
-
-[node name="Player" parent="." instance=ExtResource("3_kbl70")]
-
-[node name="LevelUi" parent="." instance=ExtResource("2_m7lsr")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("3_jeca8")
