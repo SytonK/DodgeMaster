@@ -6,6 +6,7 @@
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ni5lo")
+level_times = Array[int]([2, 3, 4])
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("3_jeca8")
