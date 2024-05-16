@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://du6b5e0bpo0n2"]
 
-[ext_resource type="Script" path="res://src/levels/level.gd" id="1_ni5lo"]
+[ext_resource type="Script" path="res://src/levels/level 1/level_1.gd" id="1_bmfno"]
 [ext_resource type="TileSet" uid="uid://c21s16q86co5l" path="res://src/levels/envierment/tilemap.tres" id="2_2485q"]
 [ext_resource type="PackedScene" uid="uid://544n3vs8058" path="res://src/enemies/towers/target player tower/target_player_tower.tscn" id="4_8hhjk"]
 [ext_resource type="PackedScene" uid="uid://dbi27qlcdmvi4" path="res://src/enemies/invisible spawner/target player invisible spawner/target_player_invisible_spawner.tscn" id="5_u5s4b"]
 
 [node name="Level1" type="Node2D"]
-script = ExtResource("1_ni5lo")
-level_times = Array[int]([15, 20, 25])
+script = ExtResource("1_bmfno")
+level_times = Array[int]([1, 2])
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_2485q")

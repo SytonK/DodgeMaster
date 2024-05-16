@@ -51,15 +51,35 @@ func _on_player_game_over() -> void:
 	pause_menu.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_timer_timeout() -> void:
-	time_left -= 1
-	if time_left < 0:
-		level_time_index += 1
-		_on_level_next_index()
-		if level_time_index <= level_times.size() - 1:
-			time_left = level_times[level_time_index]
-	
-	time_label.text = str(time_left)
+	if level_time_index <= level_times.size() - 1:
+		time_left -= 1
+		if time_left < 0:
+			level_time_index += 1
+			_on_level_next_index()
+			if level_time_index <= level_times.size() - 1:
+				time_left = level_times[level_time_index]
+			else:
+				time_left = 0
+		time_label.text = str(time_left)
 
 func _on_level_next_index() -> void:
+	if level_time_index > level_times.size() - 1:
+		_on_end_mode_enter()
+	else:
+		if level_time_index == 1:
+			_on_normal_mode_enter()
+		else:
+			_on_hard_mode_enter()
+
+func _on_normal_mode_enter() -> void:
 	#change this code for the level
 	pass
+
+func _on_hard_mode_enter() -> void:
+	#change this code for the level
+	pass
+
+func _on_end_mode_enter() -> void:
+	#change this code for the level
+	pass
+
