@@ -72,12 +72,10 @@ func _on_level_next_index() -> void:
 			_on_hard_mode_enter()
 
 func _on_normal_mode_enter() -> void:
-	#change this code for the level
-	pass
+	time_label.set("theme_override_colors/font_color", Color(0.8, 0, 0))
 
 func _on_hard_mode_enter() -> void:
-	#change this code for the level
-	pass
+	time_label.set("theme_override_colors/font_color", Color(0.8, 0.8, 0))
 
 func _on_end_mode_enter() -> void:
 	#change this code for the level

@@ -1,3 +1,4 @@
+class_name TargetPlayerTower
 extends StaticBody2D
 
 
