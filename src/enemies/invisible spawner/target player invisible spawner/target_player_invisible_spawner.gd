@@ -1,3 +1,4 @@
+class_name TargerPlayerInvisibleSpawner
 extends Node2D
 
 
@@ -8,8 +9,8 @@ const COLOR_MODDLATE_FACTOR: float = 0.001
 @onready var spawner: Spawner = $Spawner
 
 @export var frequency: float
-@export var projectile_speed: int = 300
-@export var radius: int
+@export var projectile_speed: float = 300
+@export var radius: float
 
 
 func _ready() -> void:

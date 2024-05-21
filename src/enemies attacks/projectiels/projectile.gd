@@ -5,7 +5,7 @@ extends Hitbox
 @export var speed: float = 300
 @export var direction: Vector2 : set = _set_direction
 
-@export var max_distance_from_axis: int = 5000
+@export var max_distance_from_axis: float = 5000
 
 
 func _process(delta: float) -> void:
