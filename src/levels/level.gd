@@ -2,6 +2,8 @@ class_name Level
 extends Node2D
 
 
+@onready var next_level_portal: Area2D = $NextLevelPortal
+
 const LEVEL_UI = preload("res://src/UI/level ui/level_ui.tscn")
 var game_over_menu: Control
 var pause_menu: Control
@@ -78,6 +80,7 @@ func _on_hard_mode_enter() -> void:
 	time_label.set("theme_override_colors/font_color", Color(0.8, 0, 0))
 
 func _on_end_mode_enter() -> void:
-	#change this code for the level
-	pass
+	next_level_portal.monitoring = true
+	next_level_portal.visible = true
+	
 

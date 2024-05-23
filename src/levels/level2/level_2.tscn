@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2emmeic8hfq"]
+
+[ext_resource type="Script" path="res://src/levels/level.gd" id="1_n8jfy"]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_n8jfy")
+level_times = Array[int]([15, 30, 15])

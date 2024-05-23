@@ -15,10 +15,6 @@ func _on_hard_mode_enter() -> void:
 	_faster_towers()
 	super._on_hard_mode_enter()
 
-func _on_end_mode_enter() -> void:
-	#change this code for the level
-	pass
-
 
 func _enable_towers() -> void:
 	target_player_tower_bot_right.disabled = false
