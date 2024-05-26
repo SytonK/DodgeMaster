@@ -8,7 +8,7 @@
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_bmfno")
-level_times = Array[int]([20, 20, 20])
+level_times = Array[int]([20, 5, 20])
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_2485q")
@@ -45,3 +45,4 @@ max_distance_from_axis = 1000.0
 
 [node name="NextLevelPortal" parent="." instance=ExtResource("5_d47p8")]
 position = Vector2(-45, -329)
+next_level_number = 2
