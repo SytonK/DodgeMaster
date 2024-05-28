@@ -10,8 +10,8 @@ var max_health: int = 4
 var health: int = max_health : set = _set_health
 @onready var health_ui: HealthUI = $CanvasLayer/HealthUI
 
-@onready var hit_audio_stream_player: AudioStreamPlayer = $HitAudioStreamPlayer
-
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+const LOSE_SOUND = preload("res://assets/sounds/sound effects/lose sound.mp3")
 
 func _ready() -> void:
 	Globals.player_ref = self
@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_hurtbox_hurt() -> void:
-	hit_audio_stream_player.play()
+	audio_stream_player.play() 
 	health -= 1
 
 
@@ -38,4 +38,10 @@ func _set_health(new_health: int) -> void:
 		_die()
 
 func _die() -> void:
+	_play_lose_sound()
 	game_over.emit()
+
+func _play_lose_sound() -> void:
+	audio_stream_player.stream = LOSE_SOUND
+	audio_stream_player.play()
+	

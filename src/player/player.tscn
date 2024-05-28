@@ -41,7 +41,7 @@ shape = SubResource("RectangleShape2D_bg8lc")
 
 [node name="HealthUI" parent="CanvasLayer" instance=ExtResource("4_qbwra")]
 
-[node name="HitAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("5_ur36b")
 
