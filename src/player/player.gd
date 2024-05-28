@@ -10,6 +10,8 @@ var max_health: int = 4
 var health: int = max_health : set = _set_health
 @onready var health_ui: HealthUI = $CanvasLayer/HealthUI
 
+@onready var hit_audio_stream_player: AudioStreamPlayer = $HitAudioStreamPlayer
+
 
 func _ready() -> void:
 	Globals.player_ref = self
@@ -25,6 +27,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_hurtbox_hurt() -> void:
+	hit_audio_stream_player.play()
 	health -= 1
 
 
