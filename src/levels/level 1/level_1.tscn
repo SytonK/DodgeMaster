@@ -8,7 +8,7 @@
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_bmfno")
-level_times = Array[int]([20, 20, 20])
+level_times = Array[int]([15, 15, 15])
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_2485q")

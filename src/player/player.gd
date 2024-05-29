@@ -44,4 +44,3 @@ func _die() -> void:
 func _play_lose_sound() -> void:
 	audio_stream_player.stream = LOSE_SOUND
 	audio_stream_player.play()
-	

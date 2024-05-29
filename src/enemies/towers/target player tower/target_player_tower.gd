@@ -5,7 +5,6 @@ extends StaticBody2D
 const SHOOT_COLOR_MODDLATE_FACTOR: float = 0.001
 
 
-
 @export var disabled: bool = false : set = _on_set_disable
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -15,6 +14,8 @@ const SHOOT_COLOR_MODDLATE_FACTOR: float = 0.001
 @export var frequency: float
 @export var projectile_speed: float = 300
 @export var max_distance_from_axis: float
+
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -38,3 +39,5 @@ func _on_set_disable(new_val: bool) -> void:
 		spawner.process_mode = Node.PROCESS_MODE_DISABLED if disabled else Node.PROCESS_MODE_INHERIT
 	if sprite_2d:
 		sprite_2d.self_modulate = Color(0.5, 0.5, 0.5) if disabled else Color(0.8, 0.5, 0.5)
+	if !disabled and audio_stream_player:
+		audio_stream_player.play()
