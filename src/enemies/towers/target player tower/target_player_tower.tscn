@@ -1,13 +1,64 @@
-[gd_scene load_steps=7 format=3 uid="uid://544n3vs8058"]
+[gd_scene load_steps=11 format=3 uid="uid://544n3vs8058"]
 
 [ext_resource type="Script" path="res://src/enemies/towers/target player tower/target_player_tower.gd" id="1_t2tts"]
 [ext_resource type="Texture2D" uid="uid://brd8dhlk8hmk1" path="res://assets/testing/White spuer 32 x 32.png" id="1_ugtno"]
 [ext_resource type="Script" path="res://src/components/spawner/spawner.gd" id="2_mth17"]
 [ext_resource type="PackedScene" uid="uid://4nwv51twnheo" path="res://src/enemies attacks/projectiels/projectile.tscn" id="3_w3phn"]
 [ext_resource type="AudioStream" uid="uid://c27uq2oqxxumq" path="res://assets/sounds/sound effects/assemble.mp3" id="5_6yykq"]
+[ext_resource type="Texture2D" uid="uid://boaacnc3i3se5" path="res://assets/effects/build_tower_effect.png" id="6_vkqqo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_53b61"]
 size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="Animation_bbr2a"]
+resource_name = "build_tower"
+length = 0.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EffectSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EffectSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_y2jj7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EffectSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_57lnu"]
+_data = {
+"RESET": SubResource("Animation_y2jj7"),
+"build_tower": SubResource("Animation_bbr2a")
+}
 
 [node name="TargetPlayerTower" type="StaticBody2D"]
 collision_mask = 0
@@ -27,5 +78,17 @@ shape = SubResource("RectangleShape2D_53b61")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_6yykq")
+
+[node name="EffectSprite" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("6_vkqqo")
+hframes = 6
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_57lnu")
+}
 
 [connection signal="scene_spawned" from="Spawner" to="." method="_on_spawner_scene_spawned"]

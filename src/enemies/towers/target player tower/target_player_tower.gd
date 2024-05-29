@@ -17,6 +17,8 @@ const SHOOT_COLOR_MODDLATE_FACTOR: float = 0.001
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 func _ready() -> void:
 	_on_set_disable(disabled)
@@ -39,5 +41,6 @@ func _on_set_disable(new_val: bool) -> void:
 		spawner.process_mode = Node.PROCESS_MODE_DISABLED if disabled else Node.PROCESS_MODE_INHERIT
 	if sprite_2d:
 		sprite_2d.self_modulate = Color(0.5, 0.5, 0.5) if disabled else Color(0.8, 0.5, 0.5)
-	if !disabled and audio_stream_player:
+	if !disabled:
 		audio_stream_player.play()
+		animation_player.play('build_tower')
