@@ -6,7 +6,6 @@ extends Control
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		print('pause')
 		_toggle_pause()
 
 func _toggle_pause() -> void:

@@ -16,6 +16,7 @@ const SHOOT_COLOR_MODDLATE_FACTOR: float = 0.001
 @export var max_distance_from_axis: float
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var bullet_audio_player_2d: AudioStreamPlayer2D = $BulletAudioPlayer2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -34,6 +35,7 @@ func _on_spawner_scene_spawned(projectile: Projectile) -> void:
 		0.8 - projectile.speed * SHOOT_COLOR_MODDLATE_FACTOR)
 	projectile.max_distance_from_axis = max_distance_from_axis
 	animation_player.play('fire_bullet')
+	bullet_audio_player_2d.play()
 
 
 func _on_set_disable(new_val: bool) -> void:
@@ -45,3 +47,5 @@ func _on_set_disable(new_val: bool) -> void:
 	if !disabled:
 		audio_stream_player.play()
 		animation_player.play('build_tower')
+
+
