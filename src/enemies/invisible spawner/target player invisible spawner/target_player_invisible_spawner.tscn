@@ -10,5 +10,3 @@ script = ExtResource("1_xkkxb")
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource("2_ds3wv")
 scene_to_spawn = ExtResource("3_m87gk")
-
-[connection signal="scene_spawned" from="Spawner" to="." method="_on_spawner_scene_spawned"]
