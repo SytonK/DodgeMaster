@@ -1,12 +1,74 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc3exvsuwd6hc"]
+[gd_scene load_steps=12 format=3 uid="uid://dc3exvsuwd6hc"]
 
 [ext_resource type="Script" path="res://src/components/next level portal/next_level_portal.gd" id="1_ojcdu"]
+[ext_resource type="Texture2D" uid="uid://dqk50i12xqkyx" path="res://assets/effects/Dimensional_Portal.png" id="2_d0vhx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ay4"]
-size = Vector2(64, 64)
+size = Vector2(64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjrnn"]
+atlas = ExtResource("2_d0vhx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk1bb"]
+atlas = ExtResource("2_d0vhx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qnax"]
+atlas = ExtResource("2_d0vhx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1epx"]
+atlas = ExtResource("2_d0vhx")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs67l"]
+atlas = ExtResource("2_d0vhx")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvjdb"]
+atlas = ExtResource("2_d0vhx")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n41xf"]
+atlas = ExtResource("2_d0vhx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ygdjr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjrnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk1bb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qnax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1epx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs67l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvjdb")
+}],
+"loop": true,
+"name": &"active",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n41xf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="NextLevelPortal" type="Area2D"]
-visible = false
 collision_layer = 0
 collision_mask = 2
 monitoring = false
@@ -15,5 +77,11 @@ script = ExtResource("1_ojcdu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_f5ay4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.588235, 0.392157, 0.784314, 1)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ygdjr")
+frame_progress = 0.320126
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

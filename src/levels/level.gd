@@ -1,8 +1,7 @@
 class_name Level
 extends Node2D
 
-
-@onready var next_level_portal: Area2D = $NextLevelPortal
+@onready var next_level_portal: NextLevelPortal = $NextLevelPortal
 
 const LEVEL_UI = preload("res://src/UI/level ui/level_ui.tscn")
 var game_over_menu: Control
@@ -88,7 +87,6 @@ func _on_hard_mode_enter() -> void:
 	
 
 func _on_end_mode_enter() -> void:
-	next_level_portal.monitoring = true
-	next_level_portal.visible = true
+	next_level_portal.activate()
 	
 
