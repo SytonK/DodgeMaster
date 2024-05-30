@@ -33,6 +33,7 @@ func _on_spawner_scene_spawned(projectile: Projectile) -> void:
 		0.8 - projectile.speed * SHOOT_COLOR_MODDLATE_FACTOR, 
 		0.8 - projectile.speed * SHOOT_COLOR_MODDLATE_FACTOR)
 	projectile.max_distance_from_axis = max_distance_from_axis
+	animation_player.play('fire_bullet')
 
 
 func _on_set_disable(new_val: bool) -> void:
