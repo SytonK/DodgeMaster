@@ -1,6 +1,6 @@
 extends Level
 
-@onready var targer_player_invisible_spawner: TargerPlayerInvisibleSpawner = $TargerPlayerInvisibleSpawner
+@onready var target_player_invisible_spawner: TargetPlayerInvisibleSpawner = $TargetPlayerInvisibleSpawner
 @onready var target_player_tower_bot_right: TargetPlayerTower = $TargetPlayerTowerBotRight
 @onready var target_player_tower_bot_left: TargetPlayerTower = $TargetPlayerTowerBotLeft
 @onready var target_player_tower_top_letf: TargetPlayerTower = $TargetPlayerTowerTopLetf
@@ -27,6 +27,6 @@ func _enable_towers() -> void:
 
 
 func _faster_towers() -> void:
-	targer_player_invisible_spawner.frequency *= 0.2
-	targer_player_invisible_spawner.projectile_speed *= 2
+	target_player_invisible_spawner.frequency *= 0.2
+	target_player_invisible_spawner.projectile_speed *= 2
 	

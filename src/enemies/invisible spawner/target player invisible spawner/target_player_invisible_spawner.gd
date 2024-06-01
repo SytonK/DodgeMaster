@@ -1,4 +1,4 @@
-class_name TargerPlayerInvisibleSpawner
+class_name TargetPlayerInvisibleSpawner
 extends RadiusInvisibleSpawner
 
 
@@ -6,6 +6,12 @@ const COLOR_MODDLATE_FACTOR: float = 0.001
 
 @export var projectile_speed: float = 300
 
+const PROJECTILE = preload("res://src/enemies attacks/projectiels/projectile.tscn")
+
+
+func _ready() -> void:
+	scene_to_spawn = PROJECTILE
+	super._ready()
 
 func _on_spawner_scene_spawned(projectile) -> void:
 	super._on_spawner_scene_spawned(projectile)

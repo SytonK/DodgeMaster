@@ -5,18 +5,26 @@ extends Node2D
 enum SIDE { left, right, top, bottom }
 
 
-@onready var spawner: Spawner = $Spawner
+@onready var spawner: Spawner
 
 @export var frequency: float
 @export var radius: float
 
+@export var scene_to_spawn: PackedScene
 
 func _ready() -> void:
+	_init_spawner()
+
+func _init_spawner() -> void:
+	spawner = Spawner.new()
 	spawner.frequency = frequency
+	spawner.scene_to_spawn = scene_to_spawn
 	spawner.scene_spawned.connect(_on_spawner_scene_spawned)
+	add_child(spawner)
 
 
 func _on_spawner_scene_spawned(scene) -> void:
+	print('test')
 	scene.position = _get_random_position()
 
 
