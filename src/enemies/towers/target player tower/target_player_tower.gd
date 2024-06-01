@@ -1,5 +1,5 @@
 class_name TargetPlayerTower
-extends StaticBody2D
+extends Tower
 
 
 const SHOOT_COLOR_MODDLATE_FACTOR: float = 0.001
@@ -9,9 +9,6 @@ const SHOOT_COLOR_MODDLATE_FACTOR: float = 0.001
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
-@onready var spawner: Spawner = $Spawner
-
-@export var frequency: float
 @export var projectile_speed: float = 300
 @export var max_distance_from_axis: float
 
@@ -22,11 +19,11 @@ const SHOOT_COLOR_MODDLATE_FACTOR: float = 0.001
 
 
 func _ready() -> void:
+	super._ready()
 	_on_set_disable(disabled)
-	spawner.frequency = frequency
 
 
-func _on_spawner_scene_spawned(projectile: Projectile) -> void:
+func _on_spawner_scene_spawned(projectile) -> void:
 	projectile.direction = Globals.player_ref.position - global_position
 	projectile.rotation = projectile.direction.angle()
 	projectile.speed = projectile_speed

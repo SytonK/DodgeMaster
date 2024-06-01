@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhxng1gu8tywa"]
+
+[ext_resource type="Texture2D" uid="uid://cvimpnrtjds7v" path="res://assets/testing/8sides 64 x 64.png" id="1_k2g5h"]
+[ext_resource type="Script" path="res://src/enemies/towers/parallel tower/parallel_tower.gd" id="1_vj016"]
+[ext_resource type="Script" path="res://src/components/spawner/spawner.gd" id="3_4vsxk"]
+[ext_resource type="PackedScene" uid="uid://4nwv51twnheo" path="res://src/enemies attacks/projectiels/projectile.tscn" id="4_x8hat"]
+
+[node name="ParallelTower" type="StaticBody2D"]
+script = ExtResource("1_vj016")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k2g5h")
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("3_4vsxk")
+scene_to_spawn = ExtResource("4_x8hat")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-12, -32, 12, -32, 32, -12, 32, 12, 12, 32, -12, 32, -32, 12, -32, -12)
