@@ -14,6 +14,5 @@ layer_0/tile_data = PackedInt32Array(2293760, 1, 0, 2293761, 1, 0, 2293762, 1, 0
 
 [node name="ParallelInvisibleSpawner" type="Node2D" parent="."]
 script = ExtResource("3_0742d")
-projectile_speed = 900.0
 frequency = 1.0
 radius = 1000.0

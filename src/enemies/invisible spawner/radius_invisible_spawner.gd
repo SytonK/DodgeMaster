@@ -24,7 +24,6 @@ func _init_spawner() -> void:
 
 
 func _on_spawner_scene_spawned(scene) -> void:
-	print('test')
 	scene.position = _get_random_position()
 
 
