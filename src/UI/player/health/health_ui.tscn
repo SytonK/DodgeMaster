@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://2pt2lat70mm1"]
 
 [ext_resource type="Script" path="res://src/UI/player/health/health_ui.gd" id="1_cvwvl"]
-[ext_resource type="Texture2D" uid="uid://bed28itohr7ew" path="res://assets/testing/health.png" id="1_rjqms"]
+[ext_resource type="Texture2D" uid="uid://bed28itohr7ew" path="res://assets/UI/health.png" id="1_rjqms"]
 
 [node name="HealthUI" type="Control"]
 layout_mode = 3
